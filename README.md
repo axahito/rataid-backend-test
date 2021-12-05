@@ -22,162 +22,162 @@ How to Use :
 API Endpoints :
 
 - Item API :
-    Retrieving item list
-        method: GET
-        endpoint : ```/item```
+    Retrieving item list <br/>
+        method: GET <br/>
+        endpoint : ```/item``` <br/>
     
-    Retrieving item by id
-        method: GET
-        endpoint : ```/item/{item_id}```
+    Retrieving item by id <br/>
+        method: GET <br/>
+        endpoint : ```/item/{item_id}``` <br/>
 
-    Insert item to database
-        method: POST
-        endpoint : ```/item/store```
-        form-data : {
-            name: string,
-            price: integer
-        }
+    Insert item to database <br/>
+        method: POST <br/>
+        endpoint : ```/item/store``` <br/>
+        form-data : { <br/>
+            name: string, <br/>
+            price: integer <br/>
+        } <br/>
 
-    Update item from database
-        method: POST
-        endpoint : ```/item/{item_id}/update```
-        form-data : {
-            name: string,
-            price: integer
-        }
+    Update item from database <br/>
+        method: POST <br/>
+        endpoint : ```/item/{item_id}/update``` <br/>
+        form-data : { <br/>
+            name: string, <br/>
+            price: integer <br/>
+        } <br/>
+ 
+    Delete item from database <br/>
+        method: DELETE <br/>
+        endpoint : ```/item/{item_id}``` <br/>
 
-    Delete item from database
-        method: DELETE
-        endpoint : ```/item/{item_id}```
-
-- Customer API :
-    Retrieving customer list
-        method: GET
-        endpoint : ```/customer```
+- Customer API : <br/>
+    Retrieving customer list <br/>
+        method: GET <br/>
+        endpoint : ```/customer``` <br/>
     
-    Retrieving customer by id
-        method: GET
-        endpoint : ```/customer/{customer_id}```
+    Retrieving customer by id <br/>
+        method: GET <br/>
+        endpoint : ```/customer/{customer_id}``` <br/>
 
-    Insert customer to database
-        method: POST
-        endpoint : ```/customer/store```
-        form-data : {
-            name: string,
-            address: string
+    Insert customer to database <br/>
+        method: POST <br/>
+        endpoint : ```/customer/store``` <br/>
+        form-data : { <br/>
+            name: string, <br/>
+            address: string <br/>
+        } <br/>
+
+    Update customer from database <br/>
+        method: POST <br/>
+        endpoint : ```/customer/{customer_id}/update``` <br/>
+        form-data : { <br/>
+            name: string, <br/>
+            address: string <br/>
         }
 
-    Update customer from database
-        method: POST
-        endpoint : ```/customer/{customer_id}/update```
-        form-data : {
-            name: string,
-            address: string
-        }
+    Delete customer from database <br/>
+        method: DELETE <br/>
+        endpoint : ```/customer/{customer_id}``` <br/>
 
-    Delete customer from database
-        method: DELETE
-        endpoint : ```/customer/{customer_id}```
+- Invoice API : <br/>
+    Retrieving invoice list <br/>
+        method: GET <br/>
+        endpoint : ```/invoice``` <br/>
+     
+    Retrieving invoice by id <br/>
+        method: GET <br/>
+        endpoint : ```/invoice/{invoice_id}``` <br/>
 
-- Invoice API :
-    Retrieving invoice list
-        method: GET
-        endpoint : ```/invoice```
+    Insert invoice to database  <br/>
+        method: POST <br/>
+        endpoint : ```/invoice/store``` <br/>
+        form-data : { <br/>
+            qty: integer, <br/>
+            item_id: integer, <br/>
+            customer_id: integer <br/>
+        } <br/>
+
+    Update invoice from database <br/>
+        method: POST <br/>
+        endpoint : ```/invoice/{invoice_id}/update``` <br/>
+        form-data : { <br/>
+            qty: integer, <br/>
+            item_id: integer, <br/>
+            customer_id: integer <br/>
+        } <br/>
+
+    Delete invoice from database <br/>
+        method: DELETE <br/>
+        endpoint : ```/invoice/{invoice_id}``` <br/>
+
+- Payment API :<br/> 
+    Retrieving payment list <br/>
+        method: GET <br/>
+        endpoint : ```/payment``` <br/>
     
-    Retrieving invoice by id
-        method: GET
-        endpoint : ```/invoice/{invoice_id}```
+    Retrieving payment by id <br/>
+        method: GET <br/>
+        endpoint : ```/payment/{payment_id}``` <br/>
 
-    Insert invoice to database
-        method: POST
-        endpoint : ```/invoice/store```
-        form-data : {
-            qty: integer,
-            item_id: integer,
-            customer_id: integer
-        }
+    Insert payment to database <br/>
+        method: POST <br/>
+        endpoint : ```/payment{invoice_id}//store``` <br/>
+        form-data : {<br/>
+            payment_method: enum [transfer, cc, shopee, tokopedia],  <br/>
+        } <br/>
 
-    Update invoice from database
-        method: POST
-        endpoint : ```/invoice/{invoice_id}/update```
-        form-data : {
-            qty: integer,
-            item_id: integer,
-            customer_id: integer
-        }
+    Update payment from database <br/>
+        method: POST <br/>
+        endpoint : ```/payment/{payment_id}/update``` <br/>
+        form-data : { <br/>
+            payment_method: enum [transfer, cc, shopee, tokopedia], <br/>
+            status: enum [pending, paid, cancelled], <br/>
+        } <br/>
 
-    Delete invoice from database
-        method: DELETE
-        endpoint : ```/invoice/{invoice_id}```
+    Upload receipt <br/>
+        method: POST <br/>
+        endpoint : ```/payment/{payment_id}/upload``` <br/>
+        form-data : { <br/>
+            file: file, <br/>
+        } <br/>
+ 
+    Delete payment from database <br/>
+        method: DELETE <br/>
+        endpoint : ```/payment/{payment_id}```<br/>
 
-- Payment API :
-    Retrieving payment list
-        method: GET
-        endpoint : ```/payment```
+- Production API : <br/>
+    Retrieving production list <br/>
+        method: GET <br/>
+        endpoint : ```/production``` <br/>
     
-    Retrieving payment by id
-        method: GET
-        endpoint : ```/payment/{payment_id}```
+    Retrieving production by id <br/>
+        method: GET <br/>
+        endpoint : ```/production/{production_id}``` <br/>
 
-    Insert payment to database
-        method: POST
-        endpoint : ```/payment{invoice_id}//store```
-        form-data : {
-            payment_method: enum [transfer, cc, shopee, tokopedia],
-        }
+    Insert production to database<br/>
+        method: POST <br/>
+        endpoint : ```/production{invoice_id}//store``` <br/>
+        form-data : { <br/>
+            status: enum [designing, confirmed, printing, ready, shipping, arrived], <br/>
+            notes: string, <br/>
+            received_at: datetime, <br/>
+            produced_at: datetime, <br/>
+            finished_at: datetime <br/>
+        } <br/>
 
-    Update payment from database
-        method: POST
-        endpoint : ```/payment/{payment_id}/update```
-        form-data : {
-            payment_method: enum [transfer, cc, shopee, tokopedia],
-            status: enum [pending, paid, cancelled],
-        }
+    Update production from database <br/>
+        method: POST<br/>
+        endpoint : ```/production/{production_id}/update``` <br/>
+        form-data : { <br/>
+            status: enum [designing, confirmed, printing, ready, shipping, arrived], <br/>
+            notes: string, <br/>
+            received_at: datetime, <br/>
+            produced_at: datetime, <br/>
+            finished_at: datetime <br/>
+        } <br/>
 
-    Upload receipt
-        method: POST
-        endpoint : ```/payment/{payment_id}/upload```
-        form-data : {
-            file: file,
-        }
-
-    Delete payment from database
-        method: DELETE
-        endpoint : ```/payment/{payment_id}```
-
-- Production API :
-    Retrieving production list
-        method: GET
-        endpoint : ```/production```
-    
-    Retrieving production by id
-        method: GET
-        endpoint : ```/production/{production_id}```
-
-    Insert production to database
-        method: POST
-        endpoint : ```/production{invoice_id}//store```
-        form-data : {
-            status: enum [designing, confirmed, printing, ready, shipping, arrived],
-            notes: string,
-            received_at: datetime,
-            produced_at: datetime,
-            finished_at: datetime
-        }
-
-    Update production from database
-        method: POST
-        endpoint : ```/production/{production_id}/update```
-        form-data : {
-            status: enum [designing, confirmed, printing, ready, shipping, arrived],
-            notes: string,
-            received_at: datetime,
-            produced_at: datetime,
-            finished_at: datetime
-        }
-
-    Delete production from database
-        method: DELETE
-        endpoint : ```/production/{production_id}```
+    Delete production from database <br/> 
+        method: DELETE <br/>
+        endpoint : ```/production/{production_id}``` <br/>
 
 

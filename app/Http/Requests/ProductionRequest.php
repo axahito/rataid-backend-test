@@ -26,7 +26,7 @@ class ProductionRequest extends FormRequest
     public function rules()
     {
         return [
-            'status' => 'required|in:designing,confirmed,printing,shipping,arrived',
+            'status' => 'required|in:designing,confirmed,printing,ready,shipping,arrived',
             'received_at' => 'required',
             'produced_at' => 'required',
             'finished_at' => 'required'
